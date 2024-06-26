@@ -1,0 +1,157 @@
+{% extends 'nav_A.html' %}
+
+{% block title %}Horarios{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Styles/horario.css' %}">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01:00 - 02:30</td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Lunes" and horario.hora_inicio == "01:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Martes" and horario.hora_inicio == "01:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Miercoles" and horario.hora_inicio == "01:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Jueves" and horario.hora_inicio == "01:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Viernes" and horario.hora_inicio == "01:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>02:30 - 04:00</td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Lunes" and horario.hora_inicio == "02:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Martes" and horario.hora_inicio == "02:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Miercoles" and horario.hora_inicio == "02:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Jueves" and horario.hora_inicio == "02:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Viernes" and horario.hora_inicio == "02:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>04:00 - 05:30</td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Lunes" and horario.hora_inicio == "04:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Martes" and horario.hora_inicio == "04:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Miercoles" and horario.hora_inicio == "04:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Jueves" and horario.hora_inicio == "04:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Viernes" and horario.hora_inicio == "04:00" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>05:30 - 07:30</td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Lunes" and horario.hora_inicio == "05:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Martes" and horario.hora_inicio == "05:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Miercoles" and horario.hora_inicio == "05:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Jueves" and horario.hora_inicio == "05:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{% for horario in horarios %}
+                            {% if horario.dia == "Viernes" and horario.hora_inicio == "05:30" %}
+                                {{ horario.nombre_mat.nombre }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <!-- Repite las filas según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

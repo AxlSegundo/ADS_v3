@@ -1,0 +1,35 @@
+<!-- ver_calificaciones.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calificaciones de {{ alumno.nombre }}</title>
+</head>
+<body>
+    <h1>Calificaciones de {{ alumno.nombre }}</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Parcial 1</th>
+                <th>Parcial 2</th>
+                <th>Parcial 3</th>
+                <th>Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for materia in calificaciones %}
+            <tr>
+                <td>{{ materia.materia }}</td>
+                <td>{{ materia.parciales.1 }}</td>
+                <td>{{ materia.parciales.2 }}</td>
+                <td>{{ materia.parciales.3 }}</td>
+                <td>{{ materia.parciales.4 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

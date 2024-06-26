@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Styles/stylesPI.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="column column-40">
+            <form action="{% url 'main' %}" method="post" class="form-container">
+                <div class="row row-image">
+                    <img src="https://www.cic.ipn.mx/images/iconoslabs/ipn-vector-logo.png" alt="Logo">
+                </div>
+                <div class="row row-text">
+                    <h2>Inicia<strong><br>Sesión</strong></h2>
+                </div>
+                {% csrf_token %}
+                <div class="row row-user">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="row row-password">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="row row-switch">
+                    <span>Alumno</span>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="role" name="role" class="toggle-input">
+                        <label for="role" class="toggle-label"></label>
+                    </div>
+                    <span>Maestro</span>
+                </div>
+                <div class="row row-footer">
+                    <button type="submit" class="btn-footer">Ingresar</button>
+                </div>
+            </form>
+        </div>
+        <div class="column column-60">
+            <!-- Fotos de la Galería -->
+            <div class="gallery">
+                <img class="fade" src="{% static 'IMG/Imagen (1).jpg' %}" alt="I1">
+                <img class="fade" src="{% static 'IMG/Imagen (5).jpg' %}" alt="I2">
+                <img class="fade" src="{% static 'IMG/Imagen (3).jpg' %}" alt="I3">
+                <img class="fade" src="{% static 'IMG/Imagen (4).jpg' %}" alt="I4">
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.gallery .fade');
+
+        function showNextImage() {
+            images[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.opacity = 1;
+        }
+
+        setInterval(showNextImage, 7000); // Cambiar imagen cada 7 segundos
+    </script>
+</body>
+</html>

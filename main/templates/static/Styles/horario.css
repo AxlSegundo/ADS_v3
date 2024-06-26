@@ -1,0 +1,43 @@
+/* Container for centering the table */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Adjusts the height to 60% of the viewport height */
+}
+
+/* Table styles */
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 4px; /* Reduced padding */
+    max-height: 30px; /* Reduced maximum height */
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #6a1f45;
+    color: white;
+}
+
+/* Optional: Reduce font size for readability */
+table {
+    font-size: 14px; /* Adjusted font size */
+}
+
+/* Adjust the top margin of the table */
+.schedule-container table {
+    margin-top: 10px; /* Reduced top margin */
+}
+
+/* Footer styles */
+footer {
+    background-color: #6a1f45;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+body {
+    margin: 0; /* Elimina los márgenes predeterminados del navegador */
+    font-family: Arial, sans-serif; /* Establece la fuente predeterminada del documento */
+}
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Ocupa el 80% de la altura de la pantalla */
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+th {
+    background-color: #6a1f45;
+    color: white;
+}
+
+td a {
+    color: #6a1f45;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+td a:hover {
+    color: #4e1733;
+}

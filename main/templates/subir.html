@@ -1,0 +1,31 @@
+{% extends 'nav_P.html' %}
+
+{% block title %}Subir Calificaciones{% endblock %}
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'Styles/SCal.css' %}">
+    <div class="container-2">
+        <h2>Bienvenido, {{ profesor_vigente.nombre }}</h2>
+        
+        <!-- Lista de calificaciones -->
+        <ul>
+            {% for calificacion in calificaciones %}
+            <li>{{ calificacion.id_alumno.nombre }} - {{ calificacion.cal }}</li>
+            {% endfor %}
+        </ul>
+        
+        <!-- Formulario de subir calificación -->
+        <div class="form-container">
+            <h3>Subir Calificación</h3>
+            <form method="post">
+                {% csrf_token %}
+                <table>
+                    <tbody>
+                        {{ form.as_table }}
+                    </tbody>
+                </table>
+                <button type="submit">Subir</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

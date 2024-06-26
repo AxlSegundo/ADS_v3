@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NAV{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Styles/nav.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'IMG/LogoIPN.png' %}" alt="Instituto Politécnico Nacional">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'alumnos' %}">Inicio</a></li>
+                    <li><a href="{% url 'horario' %}">Horario</a></li>
+                    <li><a href="">Calificaciones</a></li>
+                    <li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="info-row">
+        {% if alumno_vigente %}
+            <span><strong>Alumno:</strong> {{ alumno_vigente.nombre }} {{ alumno_vigente.apellidoPat }} {{ alumno_vigente.apellidoMat }}</span>
+        {% else %}
+            <span><strong>Alumno:</strong> No disponible</span>
+        {% endif %}
+    </div>
+    <main>
+        {% block content %}
+        <!-- El contenido específico de cada página irá aquí -->
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="container"></div>
+    </footer>
+</body>
+</html>

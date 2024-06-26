@@ -1,0 +1,20 @@
+{% extends 'nav_P.html' %}
+
+{% block title %}Lista de Profesores{% endblock %}
+
+{% block content %}
+<style>
+    .centered-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70vh; /* Establece la altura del contenedor al 100% del viewport */
+    }
+</style>
+
+<div class="centered-content">
+    <h1>Bienvenido, {{ profesor_vigente.nombre }} {{ profesor_vigente.apellidoPat }} {{profesor_vigente.apellidoMat}}</h1>
+    <h2>Excelente día</h2>
+</div>
+{% endblock %}

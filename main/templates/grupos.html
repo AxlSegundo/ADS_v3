@@ -1,0 +1,26 @@
+{% extends 'nav_P.html' %}
+
+{% block title %}Grupos{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'Styles/styles_grupos.css' %}">
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Profesor</th>
+                <th>Materia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grupo in grupos %}
+            <tr>
+                <td>{{ grupo.nombre_mat.nombre }}</td>
+                <td><a href="{% url 'subir' %}">Subir</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

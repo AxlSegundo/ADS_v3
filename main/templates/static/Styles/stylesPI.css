@@ -1,0 +1,250 @@
+/* Eliminar márgenes y rellenos predeterminados, y establecer box-sizing a border-box para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Establecer altura y anchura al 100% para html y body */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* Contenedor principal usando flexbox para disponer las columnas en una fila */
+.container {
+    display: flex; /* Usar flexbox para la disposición */
+    height: 100vh; /* Altura de la ventana gráfica */
+    width: 100%; /* Anchura completa */
+}
+
+/* Estilos comunes para ambas columnas */
+.column {
+    height: 100%; /* Altura completa */
+}
+
+/* Columna que ocupa el 40% del ancho */
+.column-40 {
+    width: 40%;
+    background-color: #fff; /* Color de fondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Columna que ocupa el 60% del ancho */
+.column-60 {
+    width: 60%;
+    background-color: #6a1f45; /* Color de fondo */
+}
+
+/* Contenedor de la galería */
+.gallery {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para las imágenes de la galería */
+.gallery img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajustar la imagen para cubrir el área */
+    opacity: 0; /* Inicialmente invisibles */
+    transition: opacity 1s; /* Efecto de desvanecimiento */
+}
+
+/* Mostrar la primera imagen al cargar */
+.gallery img:first-child {
+    opacity: 1;
+}
+
+/* Estilos para el formulario */
+.form-container {
+    width: 80%;
+}
+
+.row {
+    flex: 1; /* Hacer que cada fila ocupe la misma altura */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-left: 10%; /* Separación del margen izquierdo */
+    margin-right: 10%; /* Separación del margen derecho */
+}
+
+/* Estilos específicos para la fila con imagen */
+.row-image {
+    height: 8vh; /* Limitar la altura al 8% del contenedor principal */
+    justify-content: flex-start; /* Alinear contenido a la izquierda */
+    padding: 0; /* Eliminar relleno */
+    margin-bottom: 5vh;
+    margin-top: 11vh;
+}
+
+/* Estilos para la imagen dentro de la fila */
+.row-image img {
+    height: 100%; /* Ajustar la altura de la imagen a la celda */
+    width: auto; /* Mantener la proporción de la imagen */
+}
+
+/* Estilos específicos para la fila con texto */
+.row-text {
+    justify-content: flex-start; /* Alinear contenido a la izquierda */
+    padding-left: 0; /* Sin relleno a la izquierda */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    margin-bottom: 5vh; 
+}
+
+/* Estilos para el texto h2 */
+.row-text h2 {
+    font-size: 70px; /* Tamaño de fuente */
+    font-weight: 400; /* Peso de fuente normal */
+}
+
+.row-text h2 strong {
+    font-weight: 700; /* Peso de fuente en negritas para "sesión" */
+}
+
+/* Estilos específicos para la fila con usuario */
+.row-user {
+    height: 8vh; /* Limitar la altura al 8% del contenedor principal */
+    border-bottom: 0.1px solid #cecece; /* Borde inferior */
+    border-top: 0.1px solid #cecece; /* Borde superior */
+    border-right: 0.1px solid #cecece; /* Borde derecho */
+    border-left: 15px solid #6a1f45; /* Borde izquierdo interno */
+    flex-direction: column; /* Organizar el texto y el input en columna */
+    align-items: flex-start; /* Alinear elementos al inicio (izquierda) */
+    padding-left: 5%; /* Separación del contenido respecto al borde izquierdo */
+    justify-content: center; /* Centrar verticalmente */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Estilos específicos para la fila con contraseña */
+.row-password {
+    height: 8vh; /* Limitar la altura al 8% del contenedor principal */
+    border-bottom: 0.1px solid #cecece; /* Borde inferior */
+    border-left: 0.1px solid #cecece; /* Borde izquierdo */
+    border-right: 0.1px solid #cecece; /* Borde derecho */
+    flex-direction: column; /* Organizar el texto y el input en columna */
+    align-items: flex-start; /* Alinear elementos al inicio (izquierda) */
+    padding-left: calc(5% + 15px); /* Separación del contenido respecto al borde izquierdo */
+    justify-content: center; /* Centrar verticalmente */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+.row-user label, .row-password label {
+    font-size: 15px; /* Tamaño de fuente para el texto de los labels */
+    margin-bottom: 0; /* Sin margen inferior */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+.row-user input, .row-password input {
+    width: 90%; /* Anchura del input */
+    padding-bottom: 0px; /* Relleno interno del input */
+    font-size: 13px; /* Tamaño de fuente del input */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno al seleccionar */
+}
+
+/* Estilos específicos para la fila con información */
+.row-info {
+    justify-content: flex-end; /* Alinear contenido a la derecha */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    margin-bottom: 2vh; /* Margen inferior para subir el botón */
+}
+
+.row-info .btn-info {
+    padding-right: 5%; /* Relleno a la derecha */
+    font-size: 13px; /* Tamaño de fuente del texto */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Puntero de cursor */
+    margin-top: 5%; /* Margen superior */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Estilos específicos para la fila de pie de página */
+.row-footer {
+    justify-content: flex-start; /* Alinear contenido a la izquierda */
+    padding-left: 0; /* Sin separación del margen izquierdo */
+    align-items: center; /* Alinear verticalmente al centro */
+    margin-bottom: 12vh;
+}
+
+.row-footer .btn-footer {
+    margin-top: 5%; /* Margen superior */
+    letter-spacing: 0.1em; /* Separación de las letras */
+    background-color: #6a1f45; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    font-size: 15px; /* Tamaño de fuente del texto */
+    font-weight: 1000; /* Texto en negritas */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Puntero de cursor */
+    padding-top: 2.5%; /* Relleno superior */
+    padding-bottom: 2.5%; /* Relleno inferior */
+    padding-left: 13%; /* Relleno izquierdo */
+    padding-right: 13%; /* Relleno derecho */
+}
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-label:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-input:checked + .toggle-label {
+    background-color: #6a1f45;
+}
+
+.toggle-input:checked + .toggle-label:before {
+    transform: translateX(26px);
+}
+
+.toggle-input:focus + .toggle-label {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.row-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 10px 0;
+}
+
+.row-switch span {
+    margin: 0 10px; /* Espacio a ambos lados del texto */
+}
